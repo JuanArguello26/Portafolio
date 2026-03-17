@@ -1,0 +1,89 @@
+.experience {
+  min-height: 100vh;
+  padding: 6rem 0;
+  background: #0a0a0a;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.experience-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border-left: 3px solid #64ffda;
+  transition: all 0.3s ease;
+}
+
+.experience-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(5px);
+}
+
+.experience-header {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.experience-icon {
+  color: #64ffda;
+  font-size: 1.2rem;
+  margin-top: 0.25rem;
+}
+
+.experience-position {
+  color: #e6f1ff;
+  font-size: 1.2rem;
+  margin: 0 0 0.25rem 0;
+}
+
+.experience-company {
+  color: #64ffda;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.experience-period {
+  color: #8892b0;
+  font-size: 0.85rem;
+  margin: 0.25rem 0 0 0;
+}
+
+.experience-highlights {
+  margin: 0;
+  padding-left: 2rem;
+  list-style: none;
+}
+
+.experience-highlights li {
+  color: #8892b0;
+  margin-bottom: 0.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.experience-highlights li::before {
+  content: '▹';
+  position: absolute;
+  left: -1.5rem;
+  color: #64ffda;
+}
+
+.experience-highlights li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .experience-item {
+    padding: 1rem;
+  }
+
+  .experience-position {
+    font-size: 1.1rem;
+  }
+}
