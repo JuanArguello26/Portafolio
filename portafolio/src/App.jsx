@@ -1,4 +1,6 @@
 import Navbar from './components/Navbar'
+import Cursor from './components/Cursor'
+import Particles from './components/Particles'
 import Hero from './components/Hero'
 import About from './components/About'
 import Experience from './components/Experience'
@@ -11,9 +13,12 @@ import './App.css'
 
 function App() {
   return (
-    <div className="app">
-      <Navbar />
-      <Hero />
+    <>
+      <Cursor />
+      <Particles />
+      <div className="app">
+        <Navbar />
+        <Hero />
       <About />
       <Experience />
       <Skills />
@@ -21,7 +26,8 @@ function App() {
       <Education />
       <Contact />
       <Footer />
-    </div>
+      </div>
+    </>
   )
 }
 

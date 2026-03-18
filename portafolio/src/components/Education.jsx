@@ -1,7 +1,15 @@
 import { motion } from 'framer-motion';
-import { FaGraduationCap, FaAward } from 'react-icons/fa';
+import { FaGraduationCap, FaAward, FaCertificate } from 'react-icons/fa';
 import { education } from '../data/portfolio';
 import './Education.css';
+
+const featuredCerts = [
+  "Google Data Science",
+  "Google Advanced Data Analytics",
+  "Google Data Analytics",
+  "IBM Full-Stack JavaScript Developer",
+  "Microsoft 365 Certified: Fundamentals"
+];
 
 export default function Education() {
   return (
@@ -33,7 +41,21 @@ export default function Education() {
               <div className="education-content">
                 <h3 className="education-institution">{edu.institution}</h3>
                 <p className="education-degree">{edu.degree}</p>
-                {edu.items && (
+                {edu.items && index === 3 && (
+                  <>
+                    <div className="certifications-featured">
+                      {featuredCerts.map((cert, idx) => (
+                        <span key={idx} className="cert-badge featured">
+                          <FaCertificate /> {cert}
+                        </span>
+                      ))}
+                    </div>
+                    <p className="certifications-more">
+                      +8 certificaciones adicionales en Google, Microsoft, IBM y más
+                    </p>
+                  </>
+                )}
+                {edu.items && index !== 3 && (
                   <ul className="education-items">
                     {edu.items.map((item, idx) => (
                       <li key={idx}>{item}</li>

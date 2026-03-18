@@ -1,0 +1,78 @@
+.cursor-dot {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: rgba(100, 255, 218, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cursor-dot.visible {
+  opacity: 1;
+}
+
+.cursor-dot.clicking {
+  width: 2px;
+  height: 2px;
+  background: rgba(100, 255, 218, 0.6);
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.cursor-ring.visible {
+  opacity: 1;
+}
+
+.cursor-ring.clicking {
+  width: 16px;
+  height: 16px;
+  border-color: rgba(100, 255, 218, 0.4);
+}
+
+.cursor-ship {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10001;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  width: 16px;
+  height: 16px;
+}
+
+.cursor-ship.visible {
+  opacity: 0.5;
+}
+
+.cursor-ship svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 2px rgba(100, 255, 218, 0.3));
+}
+
+.cursor-ship.clicking svg {
+  filter: drop-shadow(0 0 4px rgba(100, 255, 218, 0.5));
+}
+
+@media (max-width: 768px) {
+  .cursor-dot,
+  .cursor-ring,
+  .cursor-ship {
+    display: none;
+  }
+}

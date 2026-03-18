@@ -53,6 +53,9 @@
 
 .project-folder {
   font-size: 2rem;
+  color: #64ffda;
+  display: flex;
+  align-items: center;
 }
 
 .project-links {

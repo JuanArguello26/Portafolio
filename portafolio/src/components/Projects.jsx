@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaFolderOpen } from 'react-icons/fa';
 import { projects } from '../data/portfolio';
 import './Projects.css';
 
@@ -28,7 +28,7 @@ export default function Projects() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div className="project-header">
-                <div className="project-folder">📁</div>
+                <div className="project-folder"><FaFolderOpen /></div>
                 <div className="project-links">
                   <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
                     <FaGithub />
