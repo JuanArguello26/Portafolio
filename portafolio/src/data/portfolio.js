@@ -104,38 +104,76 @@ export const projectCategories = [
 export const projects = [
   {
     name: "PromptLab",
-    description: "Aplicación web profesional para generar prompts optimizados para IA. Transforma descripciones simples en prompts detallados y estructurados, organizados por 6 categorías especializadas. Utiliza Llama 3.1 a través de Groq API.",
+    description: "Aplicación web profesional para generar prompts optimizados para IA. Transforma descripciones simples en prompts detallados y estructurados, organizados por 6 categorías especializadas.",
     technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Groq AI"],
     github: "https://github.com/JuanArguello26/PromptLab",
-    category: "web"
+    category: "web",
+    features: [
+      "6 categorías especializadas: Estudio, Trabajo, Creativo, Desarrollo, Personal, Marketing",
+      "Generación con IA usando Llama 3.1 a través de Groq API",
+      "Historial local de hasta 20 generaciones recientes",
+      "Copia con un clic al portapapeles",
+      "Regenerar para nuevas variaciones del mismo prompt",
+      "Diseño responsivo para móvil y escritorio"
+    ]
   },
   {
     name: "Sales Analytics Dashboard",
-    description: "Análisis exploratorio de datos de ventas con visualizaciones interactivas. Identificación de patrones de compra, productos más vendidos, estacionalidad y segmentación de clientes. Dashboard generado con Plotly y Streamlit.",
+    description: "Análisis exploratorio de datos de ventas con visualizaciones interactivas. Identificación de patrones de compra y segmentación de clientes.",
     technologies: ["Python", "Pandas", "Plotly", "Streamlit", "SQL"],
     github: "https://github.com/JuanArguello26/SalesAnalytics",
-    category: "analytics"
+    category: "analytics",
+    features: [
+      "Dashboard interactivo con filtros por fecha y categoría",
+      "Análisis de productos más vendidos y facturación",
+      "Gráficos de estacionalidad y tendencias",
+      "Segmentación de clientes por comportamiento",
+      "Métricas KPIs en tiempo real",
+      "Exportación de reportes"
+    ]
   },
   {
     name: "Customer Churn Analytics",
-    description: "Análisis de churn con cohort analysis, segmentación RFM y visualización de principales factores de fuga. Dashboard interactivo para monitoreo de métricas de retención.",
+    description: "Análisis de churn con cohort analysis, segmentación RFM y visualización de principales factores de fuga.",
     technologies: ["Python", "Pandas", "Seaborn", "Streamlit", "SQL"],
     github: "https://github.com/JuanArguello26/ChurnAnalytics",
-    category: "analytics"
+    category: "analytics",
+    features: [
+      "Análisis de cohortes por mes de adquisición",
+      "Segmentación RFM (Recency, Frequency, Monetary)",
+      "Identificación de principales factores de fuga",
+      "Métricas de retención y lifetime value",
+      "Predicción de clientes en riesgo",
+      "Dashboards interactivos"
+    ]
   },
   {
     name: "Sales Forecasting API",
-    description: "API REST para predicción de ventas usando series temporales con StatsForecast (AutoARIMA). Predice ventas para los próximos 30 días con intervalos de confianza.",
+    description: "API REST para predicción de ventas usando series temporales con StatsForecast (AutoARIMA).",
     technologies: ["Python", "FastAPI", "StatsForecast", "Machine Learning", "Docker"],
     github: "https://github.com/JuanArguello26/MachineLearning-SalesForecasting",
-    category: "ml"
+    category: "ml",
+    features: [
+      "Modelo AutoARIMA automático",
+      "Predicción a 30 días con intervalos de confianza",
+      "Endpoints RESTful con documentación automática",
+      "Dockerizado para fácil despliegue",
+      "Manejo de errores robusto"
+    ]
   },
   {
     name: "Churn Prediction API",
-    description: "API REST para predecir cancelación de clientes usando Random Forest. Modelo de clasificación con ~85% accuracy y deployment en Docker.",
+    description: "API REST para predecir cancelación de clientes usando Random Forest.",
     technologies: ["Python", "FastAPI", "Scikit-learn", "Machine Learning", "Docker"],
     github: "https://github.com/JuanArguello26/MachineLearning-ChurnPrediction",
-    category: "ml"
+    category: "ml",
+    features: [
+      "Modelo Random Forest optimizado (~85% accuracy)",
+      "Clasificación binaria de clientes en riesgo",
+      "Endpoints RESTful documentados",
+      "Dockerizado para producción",
+      " Predicción en tiempo real"
+    ]
   },
   {
     name: "Sistema CRM - Colbasoft",
