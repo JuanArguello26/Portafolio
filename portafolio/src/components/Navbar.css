@@ -95,6 +95,26 @@
   font-size: 1.5rem;
 }
 
+.language-toggle {
+  background: rgba(100, 255, 218, 0.1);
+  border: 1px solid #64ffda;
+  border-radius: 20px;
+  padding: 0.4rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  color: #64ffda;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.language-toggle:hover {
+  background: rgba(100, 255, 218, 0.2);
+  transform: scale(1.05);
+}
+
 @media (max-width: 768px) {
   .menu-icon {
     display: block;

@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion';
 import { about, personalInfo } from '../data/portfolio';
+import { useLanguage } from '../context/LanguageContext';
 import profileImg from '../assets/profile.jpg';
 import './About.css';
 
 export default function About() {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="about">
       <div className="section-container">
@@ -14,7 +17,7 @@ export default function About() {
           viewport={{ amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-number">01.</span> Sobre Mí
+          <span className="section-number">01.</span> {t.about.title}
         </motion.h2>
         
         <div className="about-content">
@@ -27,10 +30,7 @@ export default function About() {
           >
             <p className="about-name">{personalInfo.name} <span className="about-nickname">({personalInfo.nickname})</span></p>
             <p>{about}</p>
-            <p>
-              Disfruto creando soluciones que combinan análisis de datos con desarrollo de software.
-              Siempre estoy buscando nuevas formas de transformar datos en información accionable.
-            </p>
+            <p>{t.about.extra}</p>
           </motion.div>
           
           <motion.div

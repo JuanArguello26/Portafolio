@@ -1,23 +1,25 @@
 import { useState, useEffect } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaGlobe } from 'react-icons/fa';
+import { useLanguage } from '../context/LanguageContext';
 import logo from '../assets/logo-masta-dev.png';
 import './Navbar.css';
-
-const navItems = [
-  { name: 'Inicio', href: '#hero' },
-  { name: 'Sobre Mí', href: '#about' },
-  { name: 'Servicios', href: '#services' },
-  { name: 'Experiencia', href: '#experience' },
-  { name: 'Habilidades', href: '#skills' },
-  { name: 'Proyectos', href: '#projects' },
-  { name: 'Educación', href: '#education' },
-  { name: 'Contacto', href: '#contact' }
-];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const { language, toggleLanguage, t } = useLanguage();
+
+  const navItems = [
+    { name: t.nav.inicio, href: '#hero' },
+    { name: t.nav.sobreMi, href: '#about' },
+    { name: t.nav.servicios, href: '#services' },
+    { name: t.nav.experiencia, href: '#experience' },
+    { name: t.nav.habilidades, href: '#skills' },
+    { name: t.nav.proyectos, href: '#projects' },
+    { name: t.nav.educacion, href: '#education' },
+    { name: t.nav.contacto, href: '#contact' }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +30,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const sections = navItems.map(item => item.href.slice(1));
+    const sections = ['hero', 'about', 'services', 'experience', 'skills', 'projects', 'education', 'contact'];
     
     const observer = new IntersectionObserver(
       (entries) => {
@@ -85,6 +87,12 @@ export default function Navbar() {
               </li>
             );
           })}
+          <li className="nav-item">
+            <button className="language-toggle" onClick={toggleLanguage} aria-label="Toggle language">
+              <FaGlobe />
+              <span>{language.toUpperCase()}</span>
+            </button>
+          </li>
         </ul>
       </div>
     </nav>

@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion';
 import { FaBriefcase } from 'react-icons/fa';
 import { experience } from '../data/portfolio';
+import { useLanguage } from '../context/LanguageContext';
 import './Experience.css';
 
 export default function Experience() {
+  const { t } = useLanguage();
+
   return (
     <section id="experience" className="experience">
       <div className="section-container">
@@ -14,7 +17,7 @@ export default function Experience() {
           viewport={{ amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-number">02.</span> Experiencia
+          <span className="section-number">02.</span> {t.experience.title}
         </motion.h2>
         
         <div className="experience-list">

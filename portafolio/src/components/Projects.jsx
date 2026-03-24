@@ -1,11 +1,20 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaFolderOpen } from 'react-icons/fa';
-import { projects, projectCategories } from '../data/portfolio';
+import { FaGithub, FaFolderOpen } from 'react-icons/fa';
+import { projects } from '../data/portfolio';
+import { useLanguage } from '../context/LanguageContext';
 import './Projects.css';
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('all');
+  const { t } = useLanguage();
+
+  const projectCategories = [
+    { id: 'all', label: t.projects.filters.all },
+    { id: 'analytics', label: t.projects.filters.analytics },
+    { id: 'ml', label: t.projects.filters.ml },
+    { id: 'web', label: t.projects.filters.web }
+  ];
 
   const filteredProjects = activeCategory === 'all' 
     ? projects 
@@ -21,7 +30,7 @@ export default function Projects() {
           viewport={{ amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-number">04.</span> Proyectos
+          <span className="section-number">04.</span> {t.projects.title}
         </motion.h2>
 
         <motion.div 

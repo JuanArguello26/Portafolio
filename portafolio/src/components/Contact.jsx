@@ -3,12 +3,14 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaDownload, FaPaperPlane } from 'react-icons/fa';
 import { useForm } from '@formspree/react';
 import { personalInfo } from '../data/portfolio';
+import { useLanguage } from '../context/LanguageContext';
 import cv from '../assets/CV_Juan_Esteban_Arguello_Botero.pdf';
 import './Contact.css';
 
 export default function Contact() {
   const [state, handleSubmit] = useForm("xlgpqqkv");
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const { t } = useLanguage();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,8 +26,8 @@ export default function Contact() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <h3>¡Mensaje enviado!</h3>
-            <p>Gracias por contactarme. Te responderé pronto.</p>
+            <h3>{t.contact.success}</h3>
+            <p>{t.contact.successMessage}</p>
           </motion.div>
         </div>
       </section>
@@ -42,7 +44,7 @@ export default function Contact() {
           viewport={{ amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-number">06.</span> Contacto
+          <span className="section-number">06.</span> {t.contact.title}
         </motion.h2>
         
         <motion.div
@@ -53,12 +55,12 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <p className="contact-intro">
-            ¿Interesado en trabajar juntos? Contáctame y hablemos sobre cómo puedo ayudarte.
+            {t.contact.intro}
           </p>
 
           <form onSubmit={handleSubmit} className="contact-form">
             <div className="form-group">
-              <label htmlFor="name">Nombre</label>
+              <label htmlFor="name">{t.contact.name}</label>
               <input
                 type="text"
                 id="name"
@@ -66,12 +68,12 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                placeholder="Tu nombre"
+                placeholder={t.contact.placeholderName}
               />
             </div>
             
             <div className="form-group">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">{t.contact.email}</label>
               <input
                 type="email"
                 id="email"
@@ -79,12 +81,12 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                placeholder="tu@email.com"
+                placeholder={t.contact.placeholderEmail}
               />
             </div>
             
             <div className="form-group">
-              <label htmlFor="message">Mensaje</label>
+              <label htmlFor="message">{t.contact.message}</label>
               <textarea
                 id="message"
                 name="message"
@@ -92,13 +94,13 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 rows="5"
-                placeholder="Tu mensaje..."
+                placeholder={t.contact.placeholderMessage}
               />
             </div>
             
             <button type="submit" disabled={state.submitting} className="submit-btn">
               <FaPaperPlane />
-              <span>{state.submitting ? 'Enviando...' : 'Enviar Mensaje'}</span>
+              <span>{state.submitting ? t.contact.sending : t.contact.send}</span>
             </button>
           </form>
           

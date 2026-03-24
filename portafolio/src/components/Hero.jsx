@@ -2,19 +2,14 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { personalInfo } from '../data/portfolio';
+import { useLanguage } from '../context/LanguageContext';
 import './Hero.css';
-
-const titles = [
-  "Analista de Datos",
-  "Desarrollador de Software",
-  "Data Scientist",
-  "BI Developer"
-];
 
 export default function Hero() {
   const [currentTitle, setCurrentTitle] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const { t, titles } = useLanguage();
 
   useEffect(() => {
     const fullText = titles[currentTitle];
@@ -40,7 +35,7 @@ export default function Hero() {
     }
 
     return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, currentTitle]);
+  }, [displayText, isDeleting, currentTitle, titles]);
 
   return (
     <section id="hero" className="hero">
@@ -51,7 +46,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Hola, mi nombre es
+          {t.hero.greeting}
         </motion.p>
         
         <motion.h1
@@ -106,8 +101,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <a href="#contact" className="cta-button primary">Contáctame</a>
-          <a href="#projects" className="cta-button secondary">Ver Proyectos</a>
+          <a href="#contact" className="cta-button primary">{t.hero.cta}</a>
+          <a href="#projects" className="cta-button secondary">{t.hero.ctaProjects}</a>
         </motion.div>
       </div>
       

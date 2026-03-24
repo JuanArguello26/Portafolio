@@ -13,6 +13,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Loader from './components/Loader'
 import ScrollProgress from './components/ScrollProgress'
+import { LanguageProvider } from './context/LanguageContext'
 import './App.css'
 
 function App() {
@@ -51,7 +52,7 @@ function App() {
   }
 
   return (
-    <>
+    <LanguageProvider>
       <ScrollProgress />
       <Cursor />
       <Particles />
@@ -74,7 +75,7 @@ function App() {
       <Contact />
       <Footer />
       </div>
-    </>
+    </LanguageProvider>
   )
 }
 
