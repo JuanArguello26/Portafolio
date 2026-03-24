@@ -1,0 +1,93 @@
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.loader-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #64ffda 0%, #0a0a0a 50%, #64ffda 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 40px rgba(100, 255, 218, 0.3);
+}
+
+.loader-logo::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: #0a0a0a;
+  border-radius: 50%;
+}
+
+.loader-text {
+  position: relative;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #64ffda;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(100, 255, 218, 0.8), 0 0 60px rgba(100, 255, 218, 0.4);
+  }
+}
+
+.loader-bar-container {
+  width: 200px;
+  height: 3px;
+  background: rgba(100, 255, 218, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.loader-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #64ffda, #4cdbb8, #64ffda);
+  background-size: 200% 100%;
+  animation: gradient 1.5s ease-in-out infinite;
+  border-radius: 3px;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.loader-loading {
+  color: #8892b0;
+  font-size: 0.9rem;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
