@@ -16,10 +16,10 @@ export default function Skills() {
       <div className="section-container">
         <motion.h2
           className="section-title"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          viewport={{ amount: 0.3 }}
+          transition={{ duration: 0.6 }}
         >
           <span className="section-number">03.</span> Habilidades
         </motion.h2>
@@ -29,10 +29,10 @@ export default function Skills() {
             <motion.div
               key={category}
               className="skill-card"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ amount: 0.3 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <div className="skill-header">
                 <span className="skill-icon">{categoryIcons[category]}</span>
@@ -40,7 +40,10 @@ export default function Skills() {
               </div>
               <div className="skill-tags">
                 {skillList.map((skill, idx) => (
-                  <span key={idx} className="skill-tag">{skill}</span>
+                  <span key={idx} className="skill-tag">
+                    <span className="skill-tag-icon">{skill.icon}</span>
+                    {skill.name}
+                  </span>
                 ))}
               </div>
             </motion.div>

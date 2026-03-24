@@ -9,10 +9,13 @@
 :root {
   --bg-primary: #0a0a0a;
   --bg-secondary: #0f0f23;
+  --bg-card: rgba(255, 255, 255, 0.03);
   --text-primary: #e6f1ff;
   --text-secondary: #8892b0;
   --accent: #64ffda;
   --accent-hover: #4cdbb8;
+  --border-color: rgba(255, 255, 255, 0.05);
+  --shadow: rgba(0, 0, 0, 0.3);
 }
 
 html {
@@ -21,11 +24,12 @@ html {
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
   color: var(--text-secondary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 body::before {

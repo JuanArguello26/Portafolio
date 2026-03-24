@@ -64,72 +64,99 @@ export const experience = [
 
 export const skills = {
   "Análisis de Datos y BI": [
-    "Power BI",
-    "Power Query",
-    "Excel avanzado",
-    "Google Data Analytics",
-    "Data Visualization",
-    "Dashboard Development",
-    "KPIs",
-    "Forecasting"
+    { name: "Power BI", icon: "📊" },
+    { name: "Power Query", icon: "⚡" },
+    { name: "Excel avanzado", icon: "📈" },
+    { name: "Google Data Analytics", icon: "🔍" },
+    { name: "Data Visualization", icon: "📉" },
+    { name: "Dashboard Development", icon: "🖥️" },
+    { name: "KPIs", icon: "🎯" },
+    { name: "Forecasting", icon: "🔮" }
   ],
   "Bases de Datos": [
-    "SQL",
-    "MySQL",
-    "MongoDB",
-    "ETL",
-    "Data Pipeline",
-    "Modelado de datos"
+    { name: "SQL", icon: "🗄️" },
+    { name: "MySQL", icon: "🐬" },
+    { name: "MongoDB", icon: "🍃" },
+    { name: "ETL", icon: "🔄" },
+    { name: "Data Pipeline", icon: "⬇️" },
+    { name: "Modelado de datos", icon: "🏗️" }
   ],
   "Programación": [
-    "Python",
-    "JavaScript",
-    "Node.js",
-    "React"
+    { name: "Python", icon: "🐍" },
+    { name: "JavaScript", icon: "🟨" },
+    { name: "Node.js", icon: "🟢" },
+    { name: "React", icon: "⚛️" }
   ],
   "Desarrollo Web": [
-    "HTML",
-    "CSS",
-    "Bootstrap"
+    { name: "HTML", icon: "🌐" },
+    { name: "CSS", icon: "🎨" },
+    { name: "Bootstrap", icon: "🔵" }
   ]
 };
 
+export const projectCategories = [
+  { id: 'all', label: 'Todos' },
+  { id: 'analytics', label: 'Análisis de Datos' },
+  { id: 'ml', label: 'Machine Learning' },
+  { id: 'web', label: 'Desarrollo Web' }
+];
+
 export const projects = [
+  {
+    name: "Sales Analytics Dashboard",
+    description: "Análisis exploratorio de datos de ventas con visualizaciones interactivas. Identificación de patrones de compra, productos más vendidos, estacionalidad y segmentación de clientes. Dashboard generado con Plotly y Streamlit.",
+    technologies: ["Python", "Pandas", "Plotly", "Streamlit", "SQL"],
+    github: "https://github.com/JuanArguello26/SalesAnalytics",
+    category: "analytics"
+  },
+  {
+    name: "Customer Churn Analytics",
+    description: "Análisis de churn con cohort analysis, segmentación RFM y visualización de principales factores de fuga. Dashboard interactivo para monitoreo de métricas de retención.",
+    technologies: ["Python", "Pandas", "Seaborn", "Streamlit", "SQL"],
+    github: "https://github.com/JuanArguello26/ChurnAnalytics",
+    category: "analytics"
+  },
   {
     name: "Sales Forecasting API",
     description: "API REST para predicción de ventas usando series temporales con StatsForecast (AutoARIMA). Predice ventas para los próximos 30 días con intervalos de confianza.",
     technologies: ["Python", "FastAPI", "StatsForecast", "Machine Learning", "Docker"],
-    github: "https://github.com/JuanArguello26/MachineLearning-SalesForecasting"
+    github: "https://github.com/JuanArguello26/MachineLearning-SalesForecasting",
+    category: "ml"
   },
   {
     name: "Churn Prediction API",
     description: "API REST para predecir cancelación de clientes usando Random Forest. Modelo de clasificación con ~85% accuracy y deployment en Docker.",
     technologies: ["Python", "FastAPI", "Scikit-learn", "Machine Learning", "Docker"],
-    github: "https://github.com/JuanArguello26/MachineLearning-ChurnPrediction"
+    github: "https://github.com/JuanArguello26/MachineLearning-ChurnPrediction",
+    category: "ml"
   },
   {
     name: "Sistema CRM - Colbasoft",
     description: "Sistema de gestión de clientes con arquitectura de software y base de datos relacional.",
     technologies: ["SQL", "MySQL", "Node.js", "React"],
-    github: "https://github.com/JuanArguello26/Colbasoft"
+    github: "https://github.com/JuanArguello26/Colbasoft",
+    category: "web"
   },
   {
     name: "Invsee (Python)",
     description: "Sistema de gestión de inventarios con control de stock, registro de entradas y salidas.",
     technologies: ["Python", "MySQL"],
-    github: "https://github.com/JuanArguello26/Pythonprojects"
+    github: "https://github.com/JuanArguello26/Pythonprojects",
+    category: "web"
   },
   {
     name: "Gestor de Tareas Web",
     description: "Aplicación web desarrollada para gestión de tareas.",
     technologies: ["JavaScript", "Bootstrap", "HTML", "CSS"],
-    github: "https://github.com/JuanArguello26/Javascriptprojects"
+    github: "https://github.com/JuanArguello26/Javascriptprojects",
+    category: "web"
   },
   {
     name: "Tienda Web de Perfumes - RevedoParfum",
     description: "Desarrollo del frontend con catálogo de productos y fichas de producto.",
     technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-    github: "https://github.com/JuanArguello26/RevedoParfum"
+    github: "https://github.com/JuanArguello26/RevedoParfum",
+    category: "web"
   }
 ];
 
