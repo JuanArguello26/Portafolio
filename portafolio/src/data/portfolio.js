@@ -103,6 +103,13 @@ export const projectCategories = [
 
 export const projects = [
   {
+    name: "PromptLab",
+    description: "Aplicación web profesional para generar prompts optimizados para IA. Transforma descripciones simples en prompts detallados y estructurados, organizados por 6 categorías especializadas. Utiliza Llama 3.1 a través de Groq API.",
+    technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Groq AI"],
+    github: "https://github.com/JuanArguello26/PromptLab",
+    category: "web"
+  },
+  {
     name: "Sales Analytics Dashboard",
     description: "Análisis exploratorio de datos de ventas con visualizaciones interactivas. Identificación de patrones de compra, productos más vendidos, estacionalidad y segmentación de clientes. Dashboard generado con Plotly y Streamlit.",
     technologies: ["Python", "Pandas", "Plotly", "Streamlit", "SQL"],
