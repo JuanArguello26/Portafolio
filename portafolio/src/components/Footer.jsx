@@ -1,11 +1,8 @@
 import { FaGithub, FaLinkedin, FaHeart } from 'react-icons/fa';
 import { personalInfo } from '../data/portfolio';
-import { useLanguage } from '../context/LanguageContext';
 import './Footer.css';
 
 export default function Footer() {
-  const { t } = useLanguage();
-
   return (
     <footer className="footer">
       <div className="footer-links">
@@ -17,7 +14,7 @@ export default function Footer() {
         </a>
       </div>
       <p className="footer-text">
-        {t.footer.madeWith} <FaHeart style={{ color: '#64ffda', fontSize: '0.8rem' }} /> {t.footer.by} {personalInfo.name} ({personalInfo.nickname})
+        Diseñado y construido por {personalInfo.name} ({personalInfo.nickname})
       </p>
     </footer>
   );

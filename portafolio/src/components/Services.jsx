@@ -1,14 +1,37 @@
 import { motion } from 'framer-motion';
 import { FaChartLine, FaDatabase, FaBrain, FaPython, FaDesktop, FaUserTie } from 'react-icons/fa';
-import { useLanguage } from '../context/LanguageContext';
 import './Services.css';
 
 const icons = [<FaChartLine />, <FaDatabase />, <FaBrain />, <FaPython />, <FaDesktop />, <FaUserTie />];
 
-export default function Services() {
-  const { t } = useLanguage();
-  const services = t.services.items;
+const services = [
+  {
+    title: "Dashboards & Visualización",
+    description: "Creación de dashboards interactivos en Power BI y Tableau para monitoreo de KPIs y métricas de negocio en tiempo real."
+  },
+  {
+    title: "Análisis de Datos",
+    description: "Análisis exploratorio y descriptivo de datos para identificar patrones, tendencias y oportunidades de negocio."
+  },
+  {
+    title: "Machine Learning",
+    description: "Desarrollo de modelos predictivos para forecasting de ventas, churn prediction y segmentación de clientes."
+  },
+  {
+    title: "Automatización & ETL",
+    description: "Automatización de procesos de datos y construcción de pipelines ETL para integración de múltiples fuentes."
+  },
+  {
+    title: "Reporting Automatizado",
+    description: "Creación de reportes automatizados que se actualizan periódicamente, reduciendo tiempo manual."
+  },
+  {
+    title: "Consultoría en Datos",
+    description: "Asesoría en arquitectura de datos, modelado de bases y optimización de consultas SQL."
+  }
+];
 
+export default function Services() {
   return (
     <section id="services" className="services">
       <div className="section-container">
@@ -19,7 +42,7 @@ export default function Services() {
           viewport={{ amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-number">02½.</span> {t.services.title}
+          <span className="section-number">03.</span> Servicios
         </motion.h2>
 
         <div className="services-grid">

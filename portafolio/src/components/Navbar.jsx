@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FaBars, FaTimes, FaGlobe } from 'react-icons/fa';
-import { useLanguage } from '../context/LanguageContext';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '../assets/logo-masta-dev.png';
 import './Navbar.css';
 
@@ -8,17 +7,16 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
-  const { language, toggleLanguage, t } = useLanguage();
 
   const navItems = [
-    { name: t.nav.inicio, href: '#hero' },
-    { name: t.nav.sobreMi, href: '#about' },
-    { name: t.nav.servicios, href: '#services' },
-    { name: t.nav.experiencia, href: '#experience' },
-    { name: t.nav.habilidades, href: '#skills' },
-    { name: t.nav.proyectos, href: '#projects' },
-    { name: t.nav.educacion, href: '#education' },
-    { name: t.nav.contacto, href: '#contact' }
+    { name: 'Inicio', href: '#hero' },
+    { name: 'Sobre Mí', href: '#about' },
+    { name: 'Experiencia', href: '#experience' },
+    { name: 'Servicios', href: '#services' },
+    { name: 'Habilidades', href: '#skills' },
+    { name: 'Proyectos', href: '#projects' },
+    { name: 'Educación', href: '#education' },
+    { name: 'Contacto', href: '#contact' }
   ];
 
   useEffect(() => {
@@ -30,7 +28,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const sections = ['hero', 'about', 'services', 'experience', 'skills', 'projects', 'education', 'contact'];
+    const sections = ['hero', 'about', 'experience', 'services', 'skills', 'projects', 'education', 'contact'];
     
     const observer = new IntersectionObserver(
       (entries) => {
@@ -87,12 +85,6 @@ export default function Navbar() {
               </li>
             );
           })}
-          <li className="nav-item">
-            <button className="language-toggle" onClick={toggleLanguage} aria-label="Toggle language">
-              <FaGlobe />
-              <span>{language.toUpperCase()}</span>
-            </button>
-          </li>
         </ul>
       </div>
     </nav>

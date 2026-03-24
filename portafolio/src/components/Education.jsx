@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaGraduationCap, FaAward, FaCertificate } from 'react-icons/fa';
 import { education } from '../data/portfolio';
-import { useLanguage } from '../context/LanguageContext';
 import './Education.css';
 
 const featuredCerts = [
@@ -13,8 +12,6 @@ const featuredCerts = [
 ];
 
 export default function Education() {
-  const { t } = useLanguage();
-
   return (
     <section id="education" className="education">
       <div className="section-container">
@@ -25,7 +22,7 @@ export default function Education() {
           viewport={{ amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-number">05.</span> {t.education.title}
+          <span className="section-number">06.</span> Educación y Certificaciones
         </motion.h2>
         
         <div className="education-list">
@@ -54,7 +51,7 @@ export default function Education() {
                       ))}
                     </div>
                     <p className="certifications-more">
-                      {t.education.featuredCerts}
+                      +8 certificaciones adicionales en Google, Microsoft, IBM y más
                     </p>
                   </>
                 )}
@@ -67,7 +64,7 @@ export default function Education() {
                 )}
                 <p className="education-period">{edu.period}</p>
                 {edu.status === 'current' && (
-                  <span className="education-status">{t.education.current}</span>
+                  <span className="education-status">En curso</span>
                 )}
               </div>
             </motion.div>
