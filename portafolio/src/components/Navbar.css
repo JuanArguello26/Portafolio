@@ -80,6 +80,14 @@
   width: 100%;
 }
 
+.nav-link.active {
+  color: #64ffda;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
 .menu-icon {
   display: none;
   cursor: pointer;

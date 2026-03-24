@@ -4,6 +4,7 @@ import Cursor from './components/Cursor'
 import Particles from './components/Particles'
 import Hero from './components/Hero'
 import About from './components/About'
+import Services from './components/Services'
 import Experience from './components/Experience'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
@@ -11,6 +12,7 @@ import Education from './components/Education'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Loader from './components/Loader'
+import ScrollProgress from './components/ScrollProgress'
 import './App.css'
 
 function App() {
@@ -50,6 +52,7 @@ function App() {
 
   return (
     <>
+      <ScrollProgress />
       <Cursor />
       <Particles />
       <div className={`app ${isPresentationMode ? 'presentation-mode' : ''}`}>
@@ -63,6 +66,7 @@ function App() {
         <Navbar />
         <Hero />
       <About />
+      <Services />
       <Experience />
       <Skills />
       <Projects />

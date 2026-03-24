@@ -6,6 +6,7 @@ import './Navbar.css';
 const navItems = [
   { name: 'Inicio', href: '#hero' },
   { name: 'Sobre Mí', href: '#about' },
+  { name: 'Servicios', href: '#services' },
   { name: 'Experiencia', href: '#experience' },
   { name: 'Habilidades', href: '#skills' },
   { name: 'Proyectos', href: '#projects' },
@@ -16,6 +17,7 @@ const navItems = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +25,28 @@ export default function Navbar() {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = navItems.map(item => item.href.slice(1));
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.3, rootMargin: '-80px 0px -20% 0px' }
+    );
+
+    sections.forEach(id => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const handleClick = (e, href) => {
@@ -47,17 +71,20 @@ export default function Navbar() {
         </div>
 
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
-          {navItems.map((item) => (
-            <li key={item.name} className="nav-item">
-              <a
-                href={item.href}
-                className="nav-link"
-                onClick={(e) => handleClick(e, item.href)}
-              >
-                {item.name}
-              </a>
-            </li>
-          ))}
+          {navItems.map((item) => {
+            const sectionId = item.href.slice(1);
+            return (
+              <li key={item.name} className="nav-item">
+                <a
+                  href={item.href}
+                  className={`nav-link ${activeSection === sectionId ? 'active' : ''}`}
+                  onClick={(e) => handleClick(e, item.href)}
+                >
+                  {item.name}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </nav>
