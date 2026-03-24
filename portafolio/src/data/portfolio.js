@@ -96,6 +96,18 @@ export const skills = {
 
 export const projects = [
   {
+    name: "Sales Forecasting API",
+    description: "API REST para predicción de ventas usando series temporales con StatsForecast (AutoARIMA). Predice ventas para los próximos 30 días con intervalos de confianza.",
+    technologies: ["Python", "FastAPI", "StatsForecast", "Machine Learning", "Docker"],
+    github: "https://github.com/JuanArguello26/MachineLearning-SalesForecasting"
+  },
+  {
+    name: "Churn Prediction API",
+    description: "API REST para predecir cancelación de clientes usando Random Forest. Modelo de clasificación con ~85% accuracy y deployment en Docker.",
+    technologies: ["Python", "FastAPI", "Scikit-learn", "Machine Learning", "Docker"],
+    github: "https://github.com/JuanArguello26/MachineLearning-ChurnPrediction"
+  },
+  {
     name: "Sistema CRM - Colbasoft",
     description: "Sistema de gestión de clientes con arquitectura de software y base de datos relacional.",
     technologies: ["SQL", "MySQL", "Node.js", "React"],
