@@ -50,6 +50,19 @@
   flex-direction: column;
   position: relative;
   overflow: visible;
+  min-height: 180px;
+}
+
+.project-click-hint {
+  color: var(--accent);
+  font-size: 0.75rem;
+  margin-top: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-click-hint {
+  opacity: 1;
 }
 
 .project-card::before {

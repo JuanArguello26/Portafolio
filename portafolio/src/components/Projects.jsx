@@ -76,16 +76,17 @@ export default function Projects() {
                   </div>
                   
                   <h3 className="project-title">{project.name}</h3>
-                  <p className="project-description">{project.description}</p>
                   
                   <div className="project-techs">
-                    {project.technologies.slice(0, 4).map((tech, idx) => (
+                    {project.technologies.slice(0, 3).map((tech, idx) => (
                       <span key={idx} className="project-tech">{tech}</span>
                     ))}
-                    {project.technologies.length > 4 && (
-                      <span className="project-tech">+{project.technologies.length - 4}</span>
+                    {project.technologies.length > 3 && (
+                      <span className="project-tech">+{project.technologies.length - 3}</span>
                     )}
                   </div>
+
+                  <p className="project-click-hint">Click para ver detalles</p>
                 </motion.div>
               ))}
             </AnimatePresence>
