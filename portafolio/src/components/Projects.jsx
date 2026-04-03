@@ -61,6 +61,12 @@ export default function Projects() {
                   whileHover={{ scale: 1.02 }}
                   style={{ cursor: 'pointer' }}
                 >
+                  {project.image && (
+                    <div className="project-image-container">
+                      <img src={project.image} alt={project.name} className="project-image" />
+                      <div className="project-image-overlay"></div>
+                    </div>
+                  )}
                   <div className="project-header">
                     <div className="project-folder"><FaFolderOpen /></div>
                     <div className="project-links">

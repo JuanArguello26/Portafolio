@@ -108,6 +108,7 @@ export const projects = [
     technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Groq AI"],
     github: "https://github.com/JuanArguello26/PromptLab",
     demo: "https://prompt-dgnxbtqlj-juanarguello26s-projects.vercel.app/",
+    image: "/promptlab-preview.jpeg",
     category: "web",
     features: [
       "6 categorías especializadas: Estudio, Trabajo, Creativo, Desarrollo, Personal, Marketing",
