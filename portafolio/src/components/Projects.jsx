@@ -3,7 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaFolderOpen, FaExternalLinkAlt } from 'react-icons/fa';
 import { projects, projectCategories } from '../data/portfolio';
 import ProjectModal from './ProjectModal';
+import promptlabImage from '../assets/promptlab-preview.jpeg';
 import './Projects.css';
+
+const projectImages = {
+  'PromptLab': promptlabImage
+};
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -61,9 +66,9 @@ export default function Projects() {
                   whileHover={{ scale: 1.02 }}
                   style={{ cursor: 'pointer' }}
                 >
-                  {project.image && (
+                  {projectImages[project.name] && (
                     <div className="project-image-container">
-                      <img src={project.image} alt={project.name} className="project-image" />
+                      <img src={projectImages[project.name]} alt={project.name} className="project-image" />
                       <div className="project-image-overlay"></div>
                     </div>
                   )}
