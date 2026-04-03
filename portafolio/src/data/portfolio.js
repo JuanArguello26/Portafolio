@@ -107,6 +107,7 @@ export const projects = [
     description: "Aplicación web profesional para generar prompts optimizados para IA. Transforma descripciones simples en prompts detallados y estructurados, organizados por 6 categorías especializadas.",
     technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Groq AI"],
     github: "https://github.com/JuanArguello26/PromptLab",
+    demo: "https://prompt-dgnxbtqlj-juanarguello26s-projects.vercel.app/",
     category: "web",
     features: [
       "6 categorías especializadas: Estudio, Trabajo, Creativo, Desarrollo, Personal, Marketing",
