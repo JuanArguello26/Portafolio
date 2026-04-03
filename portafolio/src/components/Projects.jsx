@@ -69,35 +69,41 @@ export default function Projects() {
                   {projectImages[project.name] && (
                     <div className="project-image-container">
                       <img src={projectImages[project.name]} alt={project.name} className="project-image" />
-                      <div className="project-image-overlay"></div>
+                      <div className="project-image-overlay">
+                        <div className="project-overlay-content">
+                          <span className="project-card-name">{project.name}</span>
+                          <div className="project-card-links">
+                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link-overlay" onClick={(e) => e.stopPropagation()}>
+                              <FaGithub />
+                            </a>
+                            {project.demo && (
+                              <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-link-overlay" onClick={(e) => e.stopPropagation()}>
+                                <FaExternalLinkAlt />
+                              </a>
+                            )}
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   )}
-                  <div className="project-header">
-                    <div className="project-folder"><FaFolderOpen /></div>
-                    <div className="project-links">
-                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link" onClick={(e) => e.stopPropagation()}>
-                        <FaGithub />
-                      </a>
-                      {project.demo && (
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-link" onClick={(e) => e.stopPropagation()}>
-                          <FaExternalLinkAlt />
-                        </a>
+                  <div className="project-content">
+                    <div className="project-header">
+                      <div className="project-folder"><FaFolderOpen /></div>
+                    </div>
+                    
+                    <h3 className="project-title">{project.name}</h3>
+                    
+                    <div className="project-techs">
+                      {project.technologies.slice(0, 3).map((tech, idx) => (
+                        <span key={idx} className="project-tech">{tech}</span>
+                      ))}
+                      {project.technologies.length > 3 && (
+                        <span className="project-tech">+{project.technologies.length - 3}</span>
                       )}
                     </div>
-                  </div>
-                  
-                  <h3 className="project-title">{project.name}</h3>
-                  
-                  <div className="project-techs">
-                    {project.technologies.slice(0, 3).map((tech, idx) => (
-                      <span key={idx} className="project-tech">{tech}</span>
-                    ))}
-                    {project.technologies.length > 3 && (
-                      <span className="project-tech">+{project.technologies.length - 3}</span>
-                    )}
-                  </div>
 
-                  <p className="project-click-hint">Click para ver detalles</p>
+                    <p className="project-click-hint">Click para ver detalles</p>
+                  </div>
                 </motion.div>
               ))}
             </AnimatePresence>
