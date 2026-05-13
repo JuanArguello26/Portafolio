@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
-import { FaDatabase, FaCode, FaChartLine, FaGlobe } from 'react-icons/fa';
 import { skills } from '../data/portfolio';
 import './Skills.css';
 
 const categoryIcons = {
-  "Análisis de Datos y BI": <FaChartLine />,
-  "Bases de Datos": <FaDatabase />,
-  "Programación": <FaCode />,
-  "Desarrollo Web": <FaGlobe />
+  "Frontend": "🎨",
+  "Backend": "⚙️",
+  "Bases de Datos": "🗄️",
+  "Data & Machine Learning": "📊",
+  "Tools & Cloud": "☁️"
 };
 
 export default function Skills() {
@@ -21,30 +21,37 @@ export default function Skills() {
           viewport={{ amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-number">04.</span> Habilidades
+          <span className="section-number">05.</span> Habilidades
         </motion.h2>
         
-        <div className="skills-grid">
-          {Object.entries(skills).map(([category, skillList], index) => (
+        <div className="skills-categories">
+          {Object.entries(skills).map(([category, skillList], catIndex) => (
             <motion.div
               key={category}
-              className="skill-card"
+              className="skill-category"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ amount: 0.3 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: catIndex * 0.15 }}
             >
-              <div className="skill-header">
-                <span className="skill-icon">{categoryIcons[category]}</span>
-                <h3 className="skill-category">{category}</h3>
+              <div className="skill-category-header">
+                <span className="skill-category-icon">{categoryIcons[category]}</span>
+                <h3 className="skill-category-title">{category}</h3>
               </div>
-              <div className="skill-tags">
-                {skillList.map((skill, idx) => (
-                  <span key={idx} className="skill-tag">
-                    <span className="skill-tag-icon">{skill.icon}</span>
-                    {skill.name}
-                  </span>
-                ))}
+              <div className="skill-marquee">
+                <div className={`skill-marquee-track ${catIndex % 2 === 0 ? 'marquee-left' : 'marquee-right'}`}>
+                  {[...skillList, ...skillList, ...skillList].map((skill, index) => (
+                    <div
+                      key={`${skill.name}-${index}`}
+                      className="skill-item"
+                    >
+                      <div className="skill-icon-wrapper" style={{ backgroundColor: skill.color + '18' }}>
+                        <skill.icon className="skill-icon" style={{ color: skill.color }} />
+                      </div>
+                      <span className="skill-name">{skill.name}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

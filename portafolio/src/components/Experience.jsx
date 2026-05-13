@@ -14,7 +14,7 @@ export default function Experience() {
           viewport={{ amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-number">02.</span> Experiencia
+          <span className="section-number">03.</span> Experiencia
         </motion.h2>
         
         <div className="experience-list">

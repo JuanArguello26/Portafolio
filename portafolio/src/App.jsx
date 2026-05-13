@@ -66,10 +66,10 @@ function App() {
         <Navbar />
         <Hero />
       <About />
+      <Projects />
       <Experience />
       <Services />
       <Skills />
-      <Projects />
       <Education />
       <Contact />
       <Footer />

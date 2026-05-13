@@ -11,10 +11,10 @@ export default function Navbar() {
   const navItems = [
     { name: 'Inicio', href: '#hero' },
     { name: 'Sobre Mí', href: '#about' },
+    { name: 'Proyectos', href: '#projects' },
     { name: 'Experiencia', href: '#experience' },
     { name: 'Servicios', href: '#services' },
     { name: 'Habilidades', href: '#skills' },
-    { name: 'Proyectos', href: '#projects' },
     { name: 'Educación', href: '#education' },
     { name: 'Contacto', href: '#contact' }
   ];
@@ -28,7 +28,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const sections = ['hero', 'about', 'experience', 'services', 'skills', 'projects', 'education', 'contact'];
+    const sections = ['hero', 'about', 'projects', 'experience', 'services', 'skills', 'education', 'contact'];
     
     const observer = new IntersectionObserver(
       (entries) => {

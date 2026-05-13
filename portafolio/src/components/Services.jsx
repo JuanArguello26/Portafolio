@@ -42,7 +42,7 @@ export default function Services() {
           viewport={{ amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-number">03.</span> Servicios
+          <span className="section-number">04.</span> Servicios
         </motion.h2>
 
         <div className="services-grid">

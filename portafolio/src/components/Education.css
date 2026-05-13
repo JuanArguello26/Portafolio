@@ -59,7 +59,7 @@
 }
 
 .education-items li::before {
-  content: '•';
+  content: '\2022';
   position: absolute;
   left: 0;
   color: #64ffda;
@@ -83,11 +83,16 @@
   font-family: 'SF Mono', 'Fira Code', monospace;
 }
 
-.certifications-featured {
+/* Cert list grid */
+.cert-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin: 0.75rem 0;
+}
+
+.cert-item-wrapper {
+  position: relative;
 }
 
 .cert-badge {
@@ -96,21 +101,154 @@
   gap: 0.4rem;
   padding: 0.4rem 0.8rem;
   border-radius: 4px;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-family: 'SF Mono', 'Fira Code', monospace;
-}
-
-.cert-badge.featured {
   background: rgba(100, 255, 218, 0.1);
   color: #64ffda;
   border: 1px solid rgba(100, 255, 218, 0.3);
+  transition: all 0.3s ease;
+  cursor: default;
 }
 
-.certifications-more {
+.cert-badge.has-image {
+  cursor: pointer;
+  position: relative;
+  border-color: rgba(100, 255, 218, 0.5);
+  background: rgba(100, 255, 218, 0.12);
+}
+
+.cert-badge.has-image:hover {
+  background: rgba(100, 255, 218, 0.25);
+  border-color: #64ffda;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(100, 255, 218, 0.25);
+}
+
+.cert-view-icon {
+  font-size: 0.65rem;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.cert-badge.has-image:hover .cert-view-icon {
+  opacity: 1;
+}
+
+/* Tooltip */
+.cert-tooltip {
+  position: fixed;
+  transform: translate(-50%, -100%);
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+.cert-tooltip-inner {
+  background: rgba(15, 15, 15, 0.97);
+  border: 1px solid rgba(100, 255, 218, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(100, 255, 218, 0.1);
+  cursor: pointer;
+  width: 320px;
+}
+
+.cert-tooltip-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cert-tooltip-footer {
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cert-tooltip-name {
+  color: #e6f1ff;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.cert-tooltip-hint {
   color: #8892b0;
-  font-size: 0.85rem;
-  margin: 0.5rem 0 0 0;
-  font-style: italic;
+  font-size: 0.7rem;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  opacity: 0.7;
+}
+
+/* Modal overlay */
+.cert-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+  padding: 2rem;
+}
+
+.cert-modal {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(15, 15, 15, 0.98);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 40px rgba(100, 255, 218, 0.08);
+}
+
+.cert-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.6);
+  color: #e6f1ff;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.cert-modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #64ffda;
+  color: #64ffda;
+  transform: rotate(90deg);
+}
+
+.cert-modal-img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.cert-modal-name {
+  color: #e6f1ff;
+  font-size: 1rem;
+  margin: 1rem 0 0 0;
+  text-align: center;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {
@@ -118,12 +256,20 @@
     flex-direction: column;
     gap: 1rem;
   }
-  
-  .certifications-featured {
-    flex-direction: column;
+
+  .cert-tooltip-inner {
+    width: 260px;
   }
-  
-  .cert-badge.featured {
-    width: fit-content;
+
+  .cert-tooltip-img {
+    height: 150px;
+  }
+
+  .cert-modal-overlay {
+    padding: 1rem;
+  }
+
+  .cert-modal {
+    padding: 1rem;
   }
 }

@@ -88,18 +88,20 @@ export default function Particles() {
       animationId = requestAnimationFrame(animate);
     };
 
+    const handleResize = () => {
+      resize();
+      init();
+    };
+
     resize();
     init();
     animate();
 
-    window.addEventListener('resize', () => {
-      resize();
-      init();
-    });
+    window.addEventListener('resize', handleResize);
 
     return () => {
       cancelAnimationFrame(animationId);
-      window.removeEventListener('resize', resize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
