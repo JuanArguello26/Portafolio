@@ -184,7 +184,7 @@ export const projects = [
     ]
   },
   {
-    name: "Análisis Ventas Gino Pascalli",
+    name: "Análisis de Ventas",
     description: "Dashboard interactivo de análisis de ventas con carga de datos desde Excel, visualizaciones dinámicas con Chart.js y generación de informes descargables en formato Word.",
     image: "gino-pascalli-preview",
     technologies: [
