@@ -8,10 +8,11 @@ import {
   SiMysql, SiPostgresql, SiMongodb, SiPandas, SiStreamlit,
   SiTypescript, SiNextdotjs, SiTailwindcss, SiFastapi, SiScikitlearn,
   SiNodedotjs, SiGoogleanalytics, SiGooglecloud, SiRedis,
-  SiVercel, SiNetlify, SiJupyter
+  SiVercel, SiNetlify, SiJupyter, SiFlask, SiChartdotjs, SiRender
 } from 'react-icons/si';
 
 import promptlabPreview from '../assets/promptlab-preview.jpeg';
+import ginoPascalliPreview from '../assets/gino-pascalli-preview.png';
 
 import advancedDataAnalyticsImg from '../assets/certificates/advanced-data-analytics.png';
 import dataScienceImg from '../assets/certificates/data-science.png';
@@ -40,7 +41,8 @@ export const certImages = {
 };
 
 export const projectImages = {
-  'promptlab-preview': promptlabPreview
+  'promptlab-preview': promptlabPreview,
+  'gino-pascalli-preview': ginoPascalliPreview
 };
 
 export const personalInfo = {
@@ -179,6 +181,27 @@ export const projects = [
       "Copia con un clic al portapapeles",
       "Regenerar para nuevas variaciones del mismo prompt",
       "Diseño responsivo para móvil y escritorio"
+    ]
+  },
+  {
+    name: "Análisis Ventas Gino Pascalli",
+    description: "Dashboard interactivo de análisis de ventas con carga de datos desde Excel, visualizaciones dinámicas con Chart.js y generación de informes descargables en formato Word.",
+    image: "gino-pascalli-preview",
+    technologies: [
+      { name: "Python", icon: FaPython },
+      { name: "Flask", icon: SiFlask },
+      { name: "Pandas", icon: SiPandas },
+      { name: "Chart.js", icon: SiChartdotjs },
+      { name: "Docker", icon: FaDocker }
+    ],
+    demo: "https://analisis-ventas-gino-pascalli.onrender.com/",
+    category: "analytics",
+    features: [
+      "Carga y procesamiento de datos desde archivos Excel (.xlsx)",
+      "Dashboard interactivo con gráficos en tiempo real usando Chart.js",
+      "Exportación de informes completos en formato Word (.docx)",
+      "Análisis de tendencias de ventas y KPIs principales",
+      "Desplegado en Render.com con Docker"
     ]
   },
   {

@@ -90,14 +90,16 @@ export default function Projects() {
                         <FaExternalLinkAlt /> Sitio Web
                       </a>
                     )}
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="project-link-btn"
-                    >
-                      <FaGithub /> Github
-                    </a>
+                    {project.github && (
+                      <a 
+                        href={project.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="project-link-btn"
+                      >
+                        <FaGithub /> Github
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.div>
