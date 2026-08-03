@@ -65,9 +65,21 @@ y Excel avanzado.
 
 export const experience = [
   {
+    company: "Crisalltex S.A.",
+    position: "Analista de Datos",
+    period: "Agosto 2026 – Actualidad",
+    highlights: [
+      "Extracción, limpieza y transformación de datos de ventas para generar información útil para el negocio",
+      "Análisis de indicadores, tendencias y comportamiento de ventas para apoyar la toma de decisiones",
+      "Diseño de dashboards y reportes interactivos en Power BI para el seguimiento de KPIs",
+      "Automatización de reportes y tareas repetitivas mediante Excel avanzado, Power Query y soluciones de software",
+      "Desarrollo y mantenimiento de aplicaciones y herramientas para optimizar procesos y reducir el trabajo manual"
+    ]
+  },
+  {
     company: "Legón",
     position: "Analista de Datos",
-    period: "Febrero 2026 – Actualidad",
+    period: "Febrero 2026 – Julio 2026",
     highlights: [
       "Extracción, limpieza y transformación de datos utilizando SQL para análisis de negocio",
       "Desarrollo de dashboards interactivos en Power BI para monitoreo de KPIs",
