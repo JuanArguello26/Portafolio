@@ -29,24 +29,25 @@ export default function Navbar() {
 
   useEffect(() => {
     const sections = ['hero', 'about', 'projects', 'experience', 'services', 'skills', 'education', 'contact'];
-    
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.3, rootMargin: '-80px 0px -20% 0px' }
-    );
 
-    sections.forEach(id => {
-      const element = document.getElementById(id);
-      if (element) observer.observe(element);
-    });
+    const updateActiveSection = () => {
+      const markerPosition = 120;
+      let currentSection = sections[0];
 
-    return () => observer.disconnect();
+      sections.forEach((id) => {
+        const element = document.getElementById(id);
+        if (element && element.getBoundingClientRect().top <= markerPosition) {
+          currentSection = id;
+        }
+      });
+
+      setActiveSection(currentSection);
+    };
+
+    updateActiveSection();
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+
+    return () => window.removeEventListener('scroll', updateActiveSection);
   }, []);
 
   const handleClick = (e, href) => {
