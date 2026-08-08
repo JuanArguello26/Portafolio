@@ -8,7 +8,8 @@ import {
   SiMysql, SiPostgresql, SiMongodb, SiPandas, SiStreamlit,
   SiTypescript, SiNextdotjs, SiTailwindcss, SiFastapi, SiScikitlearn,
   SiNodedotjs, SiGoogleanalytics, SiGooglecloud, SiRedis,
-  SiVercel, SiNetlify, SiJupyter, SiFlask, SiChartdotjs, SiRender
+  SiVercel, SiNetlify, SiJupyter, SiFlask, SiChartdotjs, SiRender,
+  SiSupabase
 } from 'react-icons/si';
 
 import promptlabPreview from '../assets/promptlab-preview.jpeg';
@@ -227,7 +228,7 @@ export const projects = [
       { name: "Flask", icon: SiFlask },
       { name: "PostgreSQL", icon: SiPostgresql },
       { name: "JavaScript", icon: FaJs },
-      { name: "Docker", icon: FaDocker }
+      { name: "Supabase", icon: SiSupabase }
     ],
     demo: "https://solicitudes-ginopascalli.onrender.com/",
     category: "web",
