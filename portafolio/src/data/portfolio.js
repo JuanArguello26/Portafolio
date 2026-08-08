@@ -12,7 +12,8 @@ import {
 } from 'react-icons/si';
 
 import promptlabPreview from '../assets/promptlab-preview.jpeg';
-import ginoPascalliPreview from '../assets/gino-pascalli-preview.png';
+import analisisVentasPreview from '../assets/analisis-ventas-preview.png';
+import solicitudesPreview from '../assets/solicitudes-preview.png';
 
 import advancedDataAnalyticsImg from '../assets/certificates/advanced-data-analytics.png';
 import dataScienceImg from '../assets/certificates/data-science.png';
@@ -42,7 +43,8 @@ export const certImages = {
 
 export const projectImages = {
   'promptlab-preview': promptlabPreview,
-  'gino-pascalli-preview': ginoPascalliPreview
+  'analisis-ventas-preview': analisisVentasPreview,
+  'solicitudes-preview': solicitudesPreview
 };
 
 export const personalInfo = {
@@ -198,7 +200,7 @@ export const projects = [
   {
     name: "Análisis de Ventas",
     description: "Dashboard interactivo de análisis de ventas con carga de datos desde Excel, visualizaciones dinámicas con Chart.js y generación de informes descargables en formato Word.",
-    image: "gino-pascalli-preview",
+    image: "analisis-ventas-preview",
     technologies: [
       { name: "Python", icon: FaPython },
       { name: "Flask", icon: SiFlask },
@@ -214,6 +216,28 @@ export const projects = [
       "Exportación de informes completos en formato Word (.docx)",
       "Análisis de tendencias de ventas y KPIs principales",
       "Desplegado en Render.com con Docker"
+    ]
+  },
+  {
+    name: "Sistema de Solicitudes Interáreas",
+    description: "Plataforma web interna para digitalizar y dar trazabilidad a las solicitudes entre áreas de una empresa, con máquina de estados, control de permisos por rol, notificaciones y seguimiento de SLA.",
+    image: "solicitudes-preview",
+    technologies: [
+      { name: "Python", icon: FaPython },
+      { name: "Flask", icon: SiFlask },
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "JavaScript", icon: FaJs },
+      { name: "Docker", icon: FaDocker }
+    ],
+    demo: "https://solicitudes-ginopascalli.onrender.com/",
+    category: "web",
+    features: [
+      "Máquina de estados con transiciones controladas (Pendiente, Asignada, En proceso, Finalizada, Cancelada, Rechazada)",
+      "Roles de empleado, líder de área y administrador con permisos diferenciados",
+      "Notificaciones automáticas y seguimiento de SLA por solicitud",
+      "Dashboard con KPIs y bitácora de auditoría de cada solicitud",
+      "Autenticación propia con control de sesiones y bloqueo optimista ante ediciones concurrentes",
+      "Suite de tests automatizados (pytest) cubriendo permisos, estados y seguridad"
     ]
   },
   {
