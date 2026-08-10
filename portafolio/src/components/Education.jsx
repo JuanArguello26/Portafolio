@@ -68,8 +68,8 @@ export default function Education() {
                 {edu.items ? <FaAward /> : <FaGraduationCap />}
               </div>
               <div className="education-content">
-                <h3 className="education-institution">{edu.institution}</h3>
-                <p className="education-degree">{edu.degree}</p>
+                <h3 className="education-title">{edu.degree || edu.institution}</h3>
+                {edu.degree && <p className="education-subtitle">{edu.institution}</p>}
                 {edu.items && (
                   <div className="cert-list">
                     {edu.items.map((item, idx) => {

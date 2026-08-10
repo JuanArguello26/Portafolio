@@ -391,6 +391,11 @@ export const education = [
     status: "completed"
   },
   {
+    institution: "SENA",
+    degree: "Inglés B1",
+    period: "Septiembre 2020"
+  },
+  {
     institution: "Certificaciones",
     items: [
       { name: "Google Advanced Data Analytics", certImage: "advanced-data-analytics" },
@@ -405,10 +410,5 @@ export const education = [
       { name: "Iniciación al desarrollo con IA", certImage: "iniciacion-ai" },
       { name: "Google Cybersecurity", certImage: "google-cybersecurity" }
     ]
-  },
-  {
-    institution: "SENA",
-    degree: "Inglés B1",
-    period: "Septiembre 2020"
   }
 ];
