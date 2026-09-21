@@ -54,7 +54,7 @@ export const personalInfo = {
   title: "Analista de Datos / Desarrollador de Software",
   location: "Pereira, Colombia",
   phone: "+57 315 141 3120",
-  email: "juanarguello0526@gmail.com",
+  email: "analistajuanarguello@gmail.com",
   linkedin: "https://www.linkedin.com/in/juan-e-argüello-5a9375349/",
   github: "https://github.com/JuanArguello26"
 };

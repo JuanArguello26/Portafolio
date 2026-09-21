@@ -61,6 +61,12 @@ body::before {
   z-index: -1;
 }
 
+@media (max-width: 768px) {
+  body::before {
+    background-attachment: scroll;
+  }
+}
+
 #root {
   width: 100%;
   max-width: 100%;
