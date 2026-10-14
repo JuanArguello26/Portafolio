@@ -15,7 +15,7 @@ import {
 import promptlabPreview from '../assets/promptlab-preview.jpeg';
 import analisisVentasPreview from '../assets/analisis-ventas-preview.png';
 import solicitudesPreview from '../assets/solicitudes-preview.png';
-import reveDoParfumPreview from '../assets/reve-do-parfum-preview.png';
+import reveDoParfumPreview from '../assets/reve-do-parfum-preview.webp';
 
 import advancedDataAnalyticsImg from '../assets/certificates/advanced-data-analytics.png';
 import dataScienceImg from '../assets/certificates/data-science.png';
@@ -178,6 +178,30 @@ export const projectCategories = [
 
 export const projects = [
   {
+    name: "Réve do Parfum",
+    description: "Tienda en línea de perfumería para el mercado colombiano, construida con HTML, CSS y JavaScript puros (sin framework ni build) sobre Supabase. Incluye catálogo con filtros, carrito y checkout, cuentas de cliente, factura PDF y un panel de administración con dashboard de ventas.",
+    image: "reve-do-parfum-preview",
+    technologies: [
+      { name: "HTML", icon: FaHtml5 },
+      { name: "CSS", icon: FaCss3 },
+      { name: "JavaScript", icon: FaJs },
+      { name: "Supabase", icon: SiSupabase },
+      { name: "Netlify", icon: SiNetlify }
+    ],
+    demo: "https://reve-do-parfum.netlify.app/",
+    category: "web",
+    featured: true,
+    features: [
+      "Catálogo con filtros por precio, tipo, género y notas olfativas, más quiz olfativo y recomendaciones por acordes",
+      "Compra por frasco completo, decants de 5 ml o esencias, con carrito, envío gratis y cupones de descuento",
+      "Cuentas de cliente con favoritos, reseñas, historial de pedidos, PQRS y tema claro/oscuro",
+      "Pedidos validados en el servidor (precios y stock) mediante funciones de Postgres y seguridad RLS en Supabase",
+      "Factura en PDF con CUFE y código QR generada en el navegador (ambiente de pruebas)",
+      "Panel de administración con inventario, pedidos, clientes y dashboard de ventas estilo Power BI con gráficas SVG propias",
+      "PWA instalable con service worker y pruebas automatizadas de la lógica de negocio"
+    ]
+  },
+  {
     name: "PromptLab",
     description: "Aplicación web profesional para generar prompts optimizados para IA. Transforma descripciones simples en prompts detallados y estructurados, organizados por 6 categorías especializadas.",
     image: "promptlab-preview",
@@ -241,29 +265,6 @@ export const projects = [
       "Dashboard con KPIs y bitácora de auditoría de cada solicitud",
       "Autenticación propia con control de sesiones y bloqueo optimista ante ediciones concurrentes",
       "Suite de tests automatizados (pytest) cubriendo permisos, estados y seguridad"
-    ]
-  },
-  {
-    name: "Réve do Parfum",
-    description: "Tienda en línea de perfumería para el mercado colombiano, construida con HTML, CSS y JavaScript puros (sin framework ni build) sobre Supabase. Incluye catálogo con filtros, carrito y checkout, cuentas de cliente, factura PDF y un panel de administración con dashboard de ventas.",
-    image: "reve-do-parfum-preview",
-    technologies: [
-      { name: "HTML", icon: FaHtml5 },
-      { name: "CSS", icon: FaCss3 },
-      { name: "JavaScript", icon: FaJs },
-      { name: "Supabase", icon: SiSupabase },
-      { name: "Netlify", icon: SiNetlify }
-    ],
-    demo: "https://reve-do-parfum.netlify.app/",
-    category: "web",
-    features: [
-      "Catálogo con filtros por precio, tipo, género y notas olfativas, más quiz olfativo y recomendaciones por acordes",
-      "Compra por frasco completo, decants de 5 ml o esencias, con carrito, envío gratis y cupones de descuento",
-      "Cuentas de cliente con favoritos, reseñas, historial de pedidos, PQRS y tema claro/oscuro",
-      "Pedidos validados en el servidor (precios y stock) mediante funciones de Postgres y seguridad RLS en Supabase",
-      "Factura en PDF con CUFE y código QR generada en el navegador (ambiente de pruebas)",
-      "Panel de administración con inventario, pedidos, clientes y dashboard de ventas estilo Power BI con gráficas SVG propias",
-      "PWA instalable con service worker y pruebas automatizadas de la lógica de negocio"
     ]
   },
   {
@@ -380,18 +381,6 @@ export const projects = [
       { name: "CSS", icon: FaCss3 }
     ],
     github: "https://github.com/JuanArguello26/Javascriptprojects",
-    category: "web"
-  },
-  {
-    name: "Tienda Web de Perfumes - RevedoParfum",
-    description: "Desarrollo del frontend con catálogo de productos y fichas de producto.",
-    technologies: [
-      { name: "HTML", icon: FaHtml5 },
-      { name: "CSS", icon: FaCss3 },
-      { name: "JavaScript", icon: FaJs },
-      { name: "Bootstrap", icon: FaBootstrap }
-    ],
-    github: "https://github.com/JuanArguello26/RevedoParfum",
     category: "web"
   }
 ];
