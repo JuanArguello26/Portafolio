@@ -1,0 +1,96 @@
+.section-nav {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.4rem 0.6rem;
+  background: rgba(10, 10, 10, 0.7);
+  border: 1px solid rgba(100, 255, 218, 0.25);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+}
+
+.section-nav button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(100, 255, 218, 0.4);
+  background: transparent;
+  color: #64ffda;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.section-nav button:hover:not(:disabled) {
+  background: rgba(100, 255, 218, 0.15);
+  box-shadow: 0 0 14px rgba(100, 255, 218, 0.35);
+}
+
+.section-nav button:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.section-nav-count {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: #e6f1ff;
+  min-width: 3.2rem;
+  text-align: center;
+}
+
+.section-nav-count em {
+  font-style: normal;
+  color: #8892b0;
+}
+
+.section-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  display: flex;
+  pointer-events: all;
+}
+
+.curtain-panel {
+  flex: 1;
+  background: linear-gradient(180deg, #0a0a0a 0%, #0f0f23 100%);
+  border-right: 1px solid rgba(100, 255, 218, 0.12);
+}
+
+.curtain-panel:last-of-type {
+  border-right: none;
+}
+
+.curtain-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 700;
+  color: #e6f1ff;
+  letter-spacing: 0.04em;
+}
+
+.curtain-label span {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 1rem;
+  color: #64ffda;
+}
+
+@media (max-width: 768px) {
+  .section-nav {
+    bottom: 1rem;
+    left: 1rem;
+  }
+}

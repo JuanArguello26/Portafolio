@@ -13,6 +13,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Loader from './components/Loader'
 import ScrollProgress from './components/ScrollProgress'
+import SectionNavigator from './components/SectionNavigator'
 import './App.css'
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
     <>
       <ScrollProgress />
       <Cursor />
+      <SectionNavigator />
       <Particles />
       <div className={`app ${isPresentationMode ? 'presentation-mode' : ''}`}>
         <button 

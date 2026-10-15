@@ -52,10 +52,7 @@ export default function Navbar() {
 
   const handleClick = (e, href) => {
     e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    window.dispatchEvent(new CustomEvent('goto-section', { detail: href.slice(1) }));
     setIsOpen(false);
   };
 
